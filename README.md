@@ -26,7 +26,7 @@ const MyAwesomeApp = () => {
 
       You can **emphasize** what you want, or just _suggest it_ 😏…{'\n'}
 
-      You can even [**link your website**](http://carlito.ninja) or if you prefer: [email somebody](mailto:email@somebody.com){'\n'}
+      You can even [**link your website**](http://charlesmangwa.surge.sh) or if you prefer: [email somebody](mailto:email@somebody.com){'\n'}
 
       Spice it up with some GIFs 💃:
 
@@ -37,23 +37,19 @@ const MyAwesomeApp = () => {
       [![A cool video from YT](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](http://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
       [![Another one from Vimeo](https://i.vimeocdn.com/video/399486266_640.jpg)](https://vimeo.com/57580368)
-    </Markdown>   
+    </Markdown>    
   )
 }
 
 const markdownStyles = {
   heading1: {
     fontSize: 24,
-    color: 'purple',
   },
   link: {
-    color: 'pink',
+    color: '#03a9f4',
   },
-  mailTo: {
-    color: 'orange',
-  },
-  text: {
-    color: '#555555',
+  paragraph: {
+    fontSize: 14,
   },
 }
 ```
@@ -61,7 +57,7 @@ const markdownStyles = {
 ## Properties
 ### `styles`
 
-`<Markdown />` will apply its style by default. However you can pass a `styles` prop to customize it has you want.
+The Markdown will apply its style by default. However you can pass a `styles` prop to customize it has you want.
 
 Example:
 
@@ -82,7 +78,7 @@ Example:
 
 ### `rules`
 
-Here again, `<Markdown />` will apply its rules by default. However you can pass a `rules` prop to add your own and then customize how the Markdown elements will be displayed!
+The Markdown will apply its rules by default. However you can pass a `rules` prop to add your own and then customize how the Markdown elements will be displayed!
 
 Example:
 
@@ -116,38 +112,42 @@ Example:
 </Markdown>
 ```
 
-`whitelist` will only apply the default styles for `link` and `url`, while `blacklist` will do the opposite. You don't need to pass in a rules prop that contained a key for all the styles you don't want and reimplement their styling output anymore.
+`whitelist` will only apply the default styles for `link` and `url`, while `blacklist` will do the opposite. You don't need to pass in a rules prop that contained a key for all the styles you don't want and reimplement their styling output anymore. 
 
-### Styles
+### Features
+- `blockQuote` (`<View>`) - Also `blockQuoteBar` (`<View>`) and `blockQuoteText` (`<Text>`)
+- `br` (`<Text>`)
+- `del` (`<Text>`)
+- `em` (`<Text>`)
+- `hr` (`<View>`)
+- `heading` (`<Text>`) - Also `heading1` through `heading6`
+- `inlineCode` (`<Text>`)
+- `image` (`<Image>`) - You can use `resizeMode` in `<Markdown />` styles prop to set a resizeMode
+- `link` (`Text`)
+- `list` (`<View>`) - Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemBulletType` (`Unicode character`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`)
+- `mailTo` (`Text`)
+- `paragraph` (`<View>`)
+- `plainText` (`<Text>`) - Use for styling text without any associated styles
+- `strong` (`<Text>`)
+- `table` (`<View>`)
+- `tableHeader` (`<View>`)
+- `tableHeaderCell` (`<Text>`)
+- `tableRow` (`<View>`)
+- `tableRowCell` (`<View>`)
+- `tableRowLast` (`<View>`, inherits from `tableRow`)
+- `text` (`<Text>`) - Inherited by all text based elements
+- `u` (`<View>`)
+- `url` (`<Text>`)
+- `video` (`<Image>`) - Supports Youtube & Vimeo
+- `view` (`<View>`) - This is the `View` container where the Markdown is render.
 
-| Property | Type | Features |
-| ------ | ------ |  ------ |
-| `blockQuote` | `<View>` | Also `blockQuoteBar` (`<View>`) and `blockQuoteText` (`<Text>`) |
-| `br` | `<Text>` | - |
-| `del` | `<Text>` | - |
-| `em` | `<Text>` | - |
-| `hr` | `<View>` | - |
-| `heading` | `<Text>` | Also `heading1` through `heading6` |
-| `image` | `<Image>` | You can use `resizeMode` in `<Markdown />` styles prop to set a `resizeMode` |
-| `inlineCode` | `<Text>` | - |
-| `link` | `<Text>` | - |
-| `list` | `<View>` | Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemBulletType` (`Unicode character`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`) |
-| `mailTo` | `<Text>` | - |
-| `paragraph` | `<Text>` | - |
-| `plainText` | `<Text>` | Use for styling text without any associated styles |
-| `strong` | `<Text>` | - |
-| `table` | `<View>` | - |
-| `tableHeader` | `<View>` | - |
-| `tableHeaderCell` | `<View>` | - |
-| `tableRow` | `<View>` | - |
-| `tableRowCell` | `<View>` | - |
-| `tableRowLast` | `<View>` | Inherits from `tableRow` |
-| `text` | `<Text>` | - |
-| `u` | `<Text>` | - |
-| `url` | `<Text>` | - |
-| `video` | `<Image>` | Supports YouTube & Vimeo |
-| `view` | `<View>` | This is the `View` container where the Markdown is render |
+### WIP
+
+_Most of these elements can be used, but I'm still working on some improvements. Pull requests are welcome!_
+
+- `autolink` (`<Text>`)
+- `codeBlock` (`<Text>`)
 
 ## Credits
 
-This project was forked from [`react-native-markdown`](https://github.com/lwansbrough/react-native-markdown) by [@lwansbrough](https://github.com/lwansbrough) 👍
+This project was forked from [`react-native-markdown`](https://github.com/lwansbrough/react-native-markdown) by [@lwansbrough](https://github.com/lwansbrough).
