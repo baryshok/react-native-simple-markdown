@@ -4,7 +4,7 @@
     "url": "https://github.com/baryshok/react-native-simple-markdown.git",
     "type": "git"
   },
-  "version": "1.0.61",
+  "version": "1.0.62",
   "description": "Render Markdown in React Native with native components (iOS & Android)",
   "main": "index.js",
   "author": "Charles Mangwa <charlesmangwa@gmail.com> (http://charlesmangwa.surge.sh)",
