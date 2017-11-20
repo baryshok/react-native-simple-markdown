@@ -47,7 +47,7 @@ class Markdown extends Component {
 
   renderContent = (children: string) => {
     try {
-      const mergedStyles = Object.assign(styles, this.props.styles)
+      const mergedStyles = Object.assign({}, styles, this.props.styles)
 
       const rules = this.postProcessRules(_.merge({}, SimpleMarkdown.defaultRules, initialRules(mergedStyles), this.props.rules))
       const child = Array.isArray(this.props.children)
